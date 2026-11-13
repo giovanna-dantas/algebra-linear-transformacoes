@@ -1,0 +1,45 @@
+CASO DE TESTE 1: quadrado, rotação 90°, escala (2,3), translação (1,1)
+  matriz composta M
+    esperado: [[0, -2, 1], [3, 0, 1], [0, 0, 1]]
+    obtido  : [[0.0, -2.0, 1.0], [3.0, 0.0, 1.0], [0.0, 0.0, 1.0]]
+    -> OK
+  vértices finais
+    esperado: [(1, 1), (1, 4), (-1, 4), (-1, 1)]
+    obtido  : [(1.0, 1.0), (1.0, 4.0), (-1.0, 4.0), (-1.0, 1.0)]
+    -> OK
+  det(A)
+    esperado: 6.0
+    obtido  : 6.0
+    -> OK
+  autovalores (parte imaginária)
+    esperado: ±2.449490 (= sqrt 6)
+    obtido  : 2.449490
+    -> OK
+CASO DE TESTE 2: triângulo, cisalhamento (1,0), escala (2,1), translação (-1,2)
+  matriz composta M
+    esperado: [[2, 2, -1], [0, 1, 2], [0, 0, 1]]
+    obtido  : [[2.0, 2.0, -1.0], [0.0, 1.0, 2.0], [0.0, 0.0, 1.0]]
+    -> OK
+  vértices finais
+    esperado: [(-1, 2), (3, 2), (3, 4)]
+    obtido  : [(-1.0, 2.0), (3.0, 2.0), (3.0, 4.0)]
+    -> OK
+  det(A)
+    esperado: 2.0
+    obtido  : 2.0
+    -> OK
+  autovalores
+    esperado: [2.0, 1.0]
+    obtido  : [2.0, 1.0]
+    -> OK
+  verificação A·v = λ·v
+    esperado: verdadeiro
+    obtido  : True
+    -> OK
+EXTRA: R(90°)·E(2,1) é diferente de E(2,1)·R(90°)
+  R·E diferente de E·R
+    esperado: diferentes
+    obtido  : diferentes
+    -> OK
+
+RESULTADO FINAL: TODOS OS TESTES PASSARAM
