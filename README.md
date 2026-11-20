@@ -2,10 +2,14 @@
 
 Programa em Python para aplicar e visualizar transformações geométricas em objetos bidimensionais e tridimensionais, usando matrizes em coordenadas homogêneas.
 
+---
+
 ## Requisitos
 
 - Python 3.10 ou superior
 - Bibliotecas listadas em `requirements.txt`
+
+---
 
 ## Instalação
 
@@ -14,6 +18,8 @@ Abra o terminal na pasta do projeto e execute:
 ```bash
 python -m pip install -r requirements.txt
 ```
+
+---
 
 ## Como executar
 
@@ -62,7 +68,7 @@ Depois de escolher o objeto, digite os comandos de transformação, um por linha
 
 ---
 
-## Exemplos de execução de cada objeto.
+## Exemplos de execução de cada objeto
 
 ### 1. Texto 2D
 
@@ -201,12 +207,14 @@ Os comandos aceitos dependem da dimensão do objeto:
 | `F xy`, `F xz`, `F yz` | Reflexão 3D |
 
 É possível separar várias transformações por ponto e vírgula quando se usa `--seq`. No modo interativo, informe uma transformação por linha.
+
 ---
 
 ## Resultados
 
 Os gráficos e, quando solicitadas, as animações são salvos na pasta `saida/`. O programa também informa no terminal os arquivos produzidos.
---
+
+---
 
 ## Testes
 
@@ -216,7 +224,10 @@ Para executar os casos de teste:
 python testes.py
 ```
 
---
+Os testes verificam operações matriciais, transformações 2D e 3D, matrizes inversas, autovalores e propriedades geométricas.
+
+---
+
 ## Resumo dos comandos de execução
 
 | Objetivo | Comando |
@@ -226,5 +237,3 @@ python testes.py
 | Executar a demonstração com outro texto | `python main.py --demo "Minha Palavra"` |
 | Executar os testes | `python testes.py` |
 | Instalar as dependências | `pip install -r requirements.txt` |
-
-Os testes verificam operações matriciais, transformações 2D e 3D, matrizes inversas, autovalores e propriedades geométricas.
