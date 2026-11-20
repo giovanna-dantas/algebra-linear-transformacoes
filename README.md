@@ -17,14 +17,6 @@ python -m pip install -r requirements.txt
 
 ## Como executar
 
-### Modo interativo
-
-```bash
-python main.py
-```
-
-Escolha um objeto no menu, informe as transformações desejadas e finalize a sequência com uma linha vazia.
-
 ### Demonstração automática
 
 Para executar a demonstração padrão:
@@ -39,25 +31,158 @@ Para usar outro texto:
 python main.py --demo "Minha Palavra"
 ```
 
-### Execução com parâmetros
-
-Exemplo usando um cubo:
+### Modo interativo
 
 ```bash
-python main.py --objeto cubo --seq "RZ 45; E 2 1 1; T 1 0 0"
+python main.py
 ```
 
-Exemplo transformando um texto em 3D:
+Ao executar, aparecerá um menu semelhante a este:
 
-```bash
-python main.py --texto "Olá" --3d --seq "RY 40; E 1 1.5 1; T 2 0 0" --gif
+```text
+Objeto:
+1) Texto 2D
+2) Texto 3D
+3) Quadrado
+4) Triângulo
+5) Casinha
+6) Cubo
+7) Pirâmide
+
+Escolha [1]:
 ```
 
-Para ver as opções disponíveis:
+Digite o número correspondente ao objeto desejado e aperte **Enter**.
 
-```bash
-python main.py --help
+### Como informar as transformações
+
+Depois de escolher o objeto, digite os comandos de transformação, um por linha.
+
+**Importante:** quando terminar de inserir as transformações, aperte **Enter em uma linha vazia** para finalizar a sequência e executar o processamento.
+
+---
+
+## Exemplos de execução de cada objeto.
+
+### 1. Texto 2D
+
+Na primeira tela, digite `1`. Depois, informe a palavra desejada.
+
+Exemplo:
+
+```text
+Escolha [1]: 1
+Digite o texto [IFSP]: Texto
 ```
+
+Em seguida, digite as transformações:
+
+```text
+R 45
+E 2 2
+C 0.5 0
+T 2 3
+```
+
+Aperte **Enter em uma linha vazia** para finalizar.
+
+### 2. Texto 3D
+
+Digite `2` e depois informe a palavra desejada.
+
+Exemplo:
+
+```text
+Escolha [1]: 2
+Digite o texto [IFSP]: Texto
+```
+
+Digite as transformações:
+
+```text
+RX 45
+RY 30
+RZ 60
+E 2 2 2
+C 0.5 0 0 0 0 0
+T 2 3 4
+```
+
+Aperte **Enter em uma linha vazia** para finalizar.
+
+### 3. Quadrado
+
+Digite `3` e aplique:
+
+```text
+R 45
+E 2 2
+C 0.5 0
+T 2 3
+F x
+```
+
+Aperte **Enter em uma linha vazia** para finalizar.
+
+### 4. Triângulo
+
+Digite `4` e aplique:
+
+```text
+R 45
+E 2 2
+C 0.5 0
+T 2 3
+F x
+```
+
+Aperte **Enter em uma linha vazia** para finalizar.
+
+### 5. Casinha
+
+Digite `5` e aplique:
+
+```text
+R 30
+E 1.5 1.5
+C 0.3 0
+T 2 2
+F y
+```
+
+Aperte **Enter em uma linha vazia** para finalizar.
+
+### 6. Cubo
+
+Digite `6` e aplique:
+
+```text
+RX 45
+RY 30
+RZ 60
+E 2 2 2
+C 0.5 0 0 0 0 0
+T 2 3 4
+```
+
+Aperte **Enter em uma linha vazia** para finalizar.
+
+### 7. Pirâmide
+
+Digite `7` e aplique:
+
+```text
+RX 45
+RY 30
+RZ 60
+E 1.5 1.5 1.5
+C 0.5 0 0 0 0 0
+T 2 3 4
+```
+
+Aperte **Enter em uma linha vazia** para finalizar.
+
+---
 
 ## Comandos de transformação
 
@@ -76,10 +201,12 @@ Os comandos aceitos dependem da dimensão do objeto:
 | `F xy`, `F xz`, `F yz` | Reflexão 3D |
 
 É possível separar várias transformações por ponto e vírgula quando se usa `--seq`. No modo interativo, informe uma transformação por linha.
+---
 
 ## Resultados
 
 Os gráficos e, quando solicitadas, as animações são salvos na pasta `saida/`. O programa também informa no terminal os arquivos produzidos.
+--
 
 ## Testes
 
@@ -88,5 +215,16 @@ Para executar os casos de teste:
 ```bash
 python testes.py
 ```
+
+--
+## Resumo dos comandos de execução
+
+| Objetivo | Comando |
+|---|---|
+| Abrir o programa no modo interativo | `python main.py` |
+| Executar a demonstração padrão | `python main.py --demo` |
+| Executar a demonstração com outro texto | `python main.py --demo "Minha Palavra"` |
+| Executar os testes | `python testes.py` |
+| Instalar as dependências | `pip install -r requirements.txt` |
 
 Os testes verificam operações matriciais, transformações 2D e 3D, matrizes inversas, autovalores e propriedades geométricas.
