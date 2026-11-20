@@ -1,4 +1,0 @@
-matplotlib
-Pillow
-# Apenas para regenerar o relatório PDF (gerar_relatorio_pdf.py):
-reportlab
